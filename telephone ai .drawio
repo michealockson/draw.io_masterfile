@@ -1,0 +1,111 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="AI Rotary Phone Schematic" id="u4pT-Dojiera0GgEYBT1">
+    <mxGraphModel dx="3772" dy="2728" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="eAJIImO0z0i63YlvgYMm-2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;fontColor=#1a1a2e;" value="AI Rotary Phone — System Schematic" vertex="1">
+          <mxGeometry height="40" width="800" x="844.5432400173611" y="299.1975459346064" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#555555;" value="Raspberry Pi Zero 2 W + INMP441 + MAX98357A + Vintage Rotary Phone + Ollama (local AI)" vertex="1">
+          <mxGeometry height="24" width="800" x="844.5432400173611" y="337.1975459346064" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1a6496;fontSize=11;fontColor=#1a1a2e;arcSize=8;strokeWidth=2;" value="&lt;b&gt;Raspberry Pi Zero 2 W&lt;/b&gt;&lt;br/&gt;&lt;font style=&#39;font-size:10px&#39;&gt;ARM Cortex-A53 quad-core 1GHz&lt;br/&gt;512 MB RAM&lt;br/&gt;hostname: your-pi&lt;/font&gt;" vertex="1">
+          <mxGeometry height="130" width="400" x="1044.543240017361" y="689.1975459346064" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-5" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#1a6496;" value="GPIO17 (pin 11) · GPIO18 (pin 12) · GPIO19 (pin 35) · GPIO20 (pin 38) · GPIO21 (pin 40) · 3.3V · 5V · GND" vertex="1">
+          <mxGeometry height="20" width="400" x="1044.543240017361" y="809.1975459346064" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontColor=#1a1a2e;arcSize=8;strokeWidth=2;" value="&lt;b&gt;Hook Switch&lt;/b&gt;&lt;br/&gt;&lt;font style=&#39;font-size:10px&#39;&gt;Mechanical contact&lt;br/&gt;inside rotary phone&lt;br/&gt;&lt;b&gt;LOW&lt;/b&gt; = handset lifted&lt;br/&gt;&lt;b&gt;HIGH&lt;/b&gt; = on-hook&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="180" x="577.5432400173611" y="679.1975459346064" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-7" edge="1" parent="1" source="eAJIImO0z0i63YlvgYMm-6" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;strokeWidth=2;fontSize=9;fontColor=#7d5a00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" target="eAJIImO0z0i63YlvgYMm-4" value="GPIO17 (pin 11)&lt;br/&gt;pull-up enabled">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#2e7d32;fontSize=11;fontColor=#1a1a2e;arcSize=8;strokeWidth=2;" value="&lt;b&gt;INMP441&lt;/b&gt;&lt;br/&gt;&lt;font style=&#39;font-size:10px&#39;&gt;I2S MEMS Microphone&lt;br/&gt;Replaces original carbon capsule&lt;br/&gt;VDD → 3.3V&lt;br/&gt;SCK → GPIO18&lt;br/&gt;WS → GPIO19&lt;br/&gt;SD → GPIO20&lt;/font&gt;" vertex="1">
+          <mxGeometry height="150" width="190" x="577.5432400173611" y="859.1975459346064" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-9" edge="1" parent="1" source="eAJIImO0z0i63YlvgYMm-8" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#2e7d32;strokeWidth=2;fontSize=9;fontColor=#2e7d32;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.6;entryDx=0;entryDy=0;" target="eAJIImO0z0i63YlvgYMm-4" value="I2S bus (SCK/WS/SD)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#1a1a2e;arcSize=8;strokeWidth=2;" value="&lt;b&gt;MAX98357A&lt;/b&gt;&lt;br/&gt;&lt;font style=&#39;font-size:10px&#39;&gt;I2S DAC + Amplifier&lt;br/&gt;VIN → 5V&lt;br/&gt;BCLK → GPIO18&lt;br/&gt;LRC → GPIO19&lt;br/&gt;DIN → GPIO21&lt;/font&gt;" vertex="1">
+          <mxGeometry height="140" width="190" x="1547.543240017361" y="859.1975459346064" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-11" edge="1" parent="1" source="eAJIImO0z0i63YlvgYMm-4" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b85450;strokeWidth=2;fontSize=9;fontColor=#b85450;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="eAJIImO0z0i63YlvgYMm-10" value="I2S bus (BCLK/LRC/DIN)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#6a3d9a;fontSize=11;fontColor=#1a1a2e;arcSize=8;strokeWidth=2;" value="&lt;b&gt;Vintage Rotary Phone&lt;/b&gt;&lt;br/&gt;&lt;font style=&#39;font-size:10px&#39;&gt;(e.g. Siemens S62 / GPO 746)&lt;br/&gt;&lt;br/&gt;Handset speaker ← MAX98357A output&lt;br/&gt;Handset mic capsule → replaced by INMP441&lt;br/&gt;Hook switch → GPIO17&lt;/font&gt;" vertex="1">
+          <mxGeometry height="150" width="280" x="1547.543240017361" y="659.1975459346064" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-13" edge="1" parent="1" source="eAJIImO0z0i63YlvgYMm-10" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6a3d9a;strokeWidth=2;fontSize=9;fontColor=#6a3d9a;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.7;entryY=1;entryDx=0;entryDy=0;" target="eAJIImO0z0i63YlvgYMm-12" value="speaker output">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-14" edge="1" parent="1" source="eAJIImO0z0i63YlvgYMm-6" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#aaaaaa;strokeWidth=1;dashed=1;fontSize=9;fontColor=#aaaaaa;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.8;entryDx=0;entryDy=0;" target="eAJIImO0z0i63YlvgYMm-12" value="physical part of phone">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="667.5432400173611" y="569.1975459346064" />
+              <mxPoint x="1547.543240017361" y="569.1975459346064" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f9a825;fontSize=11;fontColor=#1a1a2e;arcSize=8;strokeWidth=1.5;" value="&lt;b&gt;ALSA&lt;/b&gt;&lt;br/&gt;&lt;font style=&#39;font-size:10px&#39;&gt;Audio routing layer&lt;br/&gt;~/.asoundrc config&lt;br/&gt;softvol control&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="170" x="1044.543240017361" y="889.1975459346064" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=11;fontColor=#1a1a2e;arcSize=8;strokeWidth=1.5;" value="&lt;b&gt;whisper.cpp&lt;/b&gt;&lt;br/&gt;&lt;font style=&#39;font-size:10px&#39;&gt;Local STT&lt;br/&gt;Speech → Text&lt;br/&gt;runs on-device&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="160" x="897.5432400173611" y="1059.1975459346063" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=11;fontColor=#1a1a2e;arcSize=8;strokeWidth=1.5;" value="&lt;b&gt;Ollama&lt;/b&gt;&lt;br/&gt;&lt;font style=&#39;font-size:10px&#39;&gt;Local LLM&lt;br/&gt;qwen2.5:3b&lt;br/&gt;Text → Response&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="160" x="1097.543240017361" y="1059.1975459346063" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#c62828;fontSize=11;fontColor=#1a1a2e;arcSize=8;strokeWidth=1.5;" value="&lt;b&gt;Piper TTS&lt;/b&gt;&lt;br/&gt;&lt;font style=&#39;font-size:10px&#39;&gt;Local TTS&lt;br/&gt;Text → Speech audio&lt;br/&gt;runs on-device&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="160" x="1297.543240017361" y="1059.1975459346063" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=11;fontColor=#1a1a2e;arcSize=8;strokeWidth=2;" value="&lt;b&gt;Python Script&lt;/b&gt;&lt;br/&gt;&lt;font style=&#39;font-size:10px&#39;&gt;Main controller&lt;br/&gt;GPIO monitoring&lt;br/&gt;orchestrates all layers&lt;br/&gt;systemd autostart&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="170" x="1144.543240017361" y="889.1975459346064" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-20" edge="1" parent="1" source="eAJIImO0z0i63YlvgYMm-15" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#f9a825;strokeWidth=1.5;" target="eAJIImO0z0i63YlvgYMm-19" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-21" edge="1" parent="1" source="eAJIImO0z0i63YlvgYMm-19" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#1565c0;strokeWidth=1.5;fontSize=9;fontColor=#1565c0;" target="eAJIImO0z0i63YlvgYMm-16" value="raw audio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-22" edge="1" parent="1" source="eAJIImO0z0i63YlvgYMm-16" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#2e7d32;strokeWidth=1.5;fontSize=9;fontColor=#2e7d32;" target="eAJIImO0z0i63YlvgYMm-17" value="text">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-23" edge="1" parent="1" source="eAJIImO0z0i63YlvgYMm-17" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#c62828;strokeWidth=1.5;fontSize=9;fontColor=#c62828;" target="eAJIImO0z0i63YlvgYMm-18" value="response text">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-24" edge="1" parent="1" source="eAJIImO0z0i63YlvgYMm-18" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#f9a825;strokeWidth=1.5;fontSize=9;fontColor=#f9a825;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="eAJIImO0z0i63YlvgYMm-15" value="audio out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;fontColor=#333333;arcSize=8;strokeWidth=1.5;" value="&lt;b&gt;Power Rails&lt;/b&gt;&lt;br/&gt;&lt;font style=&#39;font-size:10px&#39;&gt;3.3V → INMP441 VDD&lt;br/&gt;5V → MAX98357A VIN&lt;br/&gt;GND → shared ground&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="400" x="1044.543240017361" y="579.1975459346064" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-26" edge="1" parent="1" source="eAJIImO0z0i63YlvgYMm-25" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#666666;strokeWidth=1.5;dashed=1;" target="eAJIImO0z0i63YlvgYMm-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-27" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=1;" value="&lt;b&gt;Signal Flow&lt;/b&gt;" vertex="1">
+          <mxGeometry height="24" width="120" x="497.5432400173611" y="1069.1975459346063" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-28" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#d6b656;" value="GPIO / digital" vertex="1">
+          <mxGeometry height="20" width="140" x="497.5432400173611" y="1099.1975459346063" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-29" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#2e7d32;" value="I2S audio bus" vertex="1">
+          <mxGeometry height="20" width="140" x="497.5432400173611" y="1121.1975459346063" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-30" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#6a3d9a;" value="Speaker output" vertex="1">
+          <mxGeometry height="20" width="140" x="497.5432400173611" y="1143.1975459346063" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-31" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#1565c0;" value="Software pipeline" vertex="1">
+          <mxGeometry height="20" width="140" x="497.5432400173611" y="1165.1975459346063" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-32" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#aaaaaa;" value="Physical / mechanical" vertex="1">
+          <mxGeometry height="20" width="160" x="497.5432400173611" y="1187.1975459346063" as="geometry" />
+        </mxCell>
+        <mxCell id="eAJIImO0z0i63YlvgYMm-33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#333333;fontSize=11;fontColor=#1a1a2e;arcSize=8;strokeWidth=1.5;align=left;" value="&lt;b&gt;Call Flow&lt;/b&gt;&lt;br/&gt;&lt;font style=&#39;font-size:10px&#39;&gt;① Handset lifted → GPIO17 LOW&lt;br/&gt;② Python detects hook change&lt;br/&gt;③ Mic audio → ALSA → whisper.cpp&lt;br/&gt;④ Text → Ollama qwen2.5:3b&lt;br/&gt;⑤ Response text → Piper TTS&lt;br/&gt;⑥ Audio → ALSA → MAX98357A → speaker&lt;br/&gt;⑦ Handset down → GPIO17 HIGH → stop&lt;/font&gt;" vertex="1">
+          <mxGeometry height="200" width="280" x="1520.0032400173611" y="1053.1975459346063" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
